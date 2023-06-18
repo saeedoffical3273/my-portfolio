@@ -1,0 +1,601 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    font-family: "Nunito", sans-serif;
+    color: white;
+}
+
+/* !.........Nav-Start.........! */
+.navbar-brand {
+    color: rgb(180, 95, 95);
+    font-size: 32px;
+    margin-left: 30px;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+.navbar-brand:hover {
+    color: rgb(180, 95, 95);
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: #fff;
+    padding: 15px;   
+}
+.navbar-toggle {
+    display: none;
+    /* Hide toggle button on larger screens */
+    cursor: pointer;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 50px;
+}
+
+.navbar-menu li {
+    margin-right: 10px;
+    margin: 20px;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-menu li a:hover {
+    color: rgb(180, 95, 95);
+}
+
+.navbar-menu.active {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(180, 95, 95);
+    color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+}
+
+.navbar-menu.active li {
+    margin-right: 0px;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(226, 43, 43);
+
+}
+
+/* Media query for toggle button */
+@media (max-width: 991px) {
+    .navbar-menu {
+        display: none;
+        /* Hide menu on smaller screens */
+
+    }
+
+    .navbar-menu.active li {
+        margin: 0px;
+        margin-left: 20px;
+
+    }
+
+    .navbar-toggle {
+        display: block;
+        /* Show toggle button on smaller screens */
+    }
+}
+
+.fa-bars {
+    color: white;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: opacity 0.1s, visibility 0.1s;
+   z-index: 999;
+    scroll-behavior: smooth;
+    border-bottom: 2px solid rgb(180, 95, 95);
+    
+    /* Add any other styles you want */
+  }
+/* !...........Nav-End........! */
+
+.bg-img {
+    height: 25rem;
+    width: 25rem;
+    background-image: url(images/bgimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+    object-fit: cover;
+    margin-top: 40px;
+    margin-left: 50px;
+    position: relative;
+    overflow: hidden;
+    animation: border-animation 5s infinite;
+    
+}
+@keyframes border-animation {
+    0% {
+        border: 2px solid red;
+    }
+    25% {
+        border: 2px solid blue;
+    }
+    50% {
+        border: 2px solid green;
+    }
+    75% {
+        border: 2px solid yellow;
+    }
+    100% {
+        border: 2px solid red;
+    }
+}
+.cuntant p {
+    color: rgb(180, 95, 95);
+    font-size: 27px;
+}
+
+.cuntant .text {
+    position: relative;
+    color: rgb(180, 95, 95);
+    font-size: 39px;
+    font-weight: 900;
+}
+
+.cuntant .text.first-text {
+    color: white;
+}
+
+.cuntant .texts {
+    color: white;
+    font-size: 18px;
+    margin-top: 19px;
+}
+
+.text.secuend-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border-left: 2px solid blue;
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+
+    40%,
+    60% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+.cuntant {
+    padding-top: 150px;
+    padding-right: 70px;
+}
+
+.butn {
+    padding: 10px 40px 10px 40px;
+    border: 2px solid rgb(180, 95, 95);
+    font-size: 19px;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    margin-top: 30px;
+}
+
+.butn:hover {
+    background-color: rgb(117, 95, 66);
+}
+
+.fa-user {
+    color: white;
+    margin-left: 10px;
+}
+
+/* <!-- !......header-End...........! --> */
+
+/* !........main-start..........! */
+/* Define initial styles for the animated elements */
+#about .main-img {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+#about h2,
+#about p,
+#about .row .col-md-3 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Define styles for elements when they become visible */
+#about .show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.main-img img {
+    border: 8px solid rgba(53, 172, 98, 0.836);
+}
+
+.crd {
+    background-color: rgb(44, 41, 41);
+    margin: 10px;
+    width: 40%;
+    text-align: center;
+    padding: 10px;
+}
+
+.crd h1 {
+    color: rgb(180, 95, 95);
+    font-weight: 800;
+}
+
+.main {
+    margin-top: 180px;
+}
+
+.mt-4 {
+    line-height: 29px;
+}
+
+.fa-download {
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+/* <!-- !..........main-end.........! --> */
+
+/* <!-- !..........my-Skill..........! --> */
+.progress-bar {
+    background-color: rgb(180, 95, 95);
+}
+
+.progress {
+    margin-bottom: 20px;
+}
+
+.header {
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 70px;
+    font-weight: 900;
+}
+
+.header span {
+    color: rgb(180, 95, 95);
+}
+
+/* <!-- !..........my-Skill-end..........! --> */
+
+
+/* <!-- !.........qualification..........! --> */
+.content span {
+    border: 1px solid black;
+    background-color: rgb(54, 50, 50);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 30%;
+
+}
+
+.content h3 {
+    margin-top: 20px;
+}
+
+/* <!-- !......My servies.....! --> */
+ 
+.smcrd {
+    border: 1px solid rgb(66, 62, 62);
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: 26px;
+}
+
+.smcrd:hover {
+    background-color: rgb(180, 95, 95);
+}
+
+.smcrd p {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* !..........Portfolio........! */
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+.portfolio-item img {
+    width: 99%;
+    object-fit: cover;
+    transition: .6s ease;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.1);
+
+}
+.portfolio-item .contente {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 43, 43, 0.7);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .contente {
+    opacity: 1;
+}
+
+.portfolio-item .contente h4,
+.portfolio-item .contente p,
+.portfolio-item .contente .view-btn {
+    color: #fff;
+    margin: 0;
+    text-align: center;
+}
+
+.portfolio-item .contente h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.portfolio-item .contente p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.portfolio-item .contente .view-btn {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.portfolio-item .contente .view-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-top: 2rem;
+}
+
+.controls .button.active {
+    cursor: pointer;
+    background-color: rgb(180, 95, 95);
+    color: var(--white);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: transparent;
+    border: 0.2rem solid rgb(180, 95, 95);
+    margin: 9px;
+    cursor: pointer;
+}
+
+.box-container {
+    padding: 0.2rem 0;
+    position: relative;
+}
+
+
+
+/* !.......Foter.......! */
+
+input {
+    width: 90%;
+    background-color: rgb(48, 46, 46);
+    border: none;
+    color: white;
+    margin: 15px;
+    padding: 10px;
+}
+
+#comment {
+    margin: 15px;
+    width: 90%;
+    background-color: rgb(48, 46, 46);
+    padding: 10px;
+    border: none;
+    color: white;
+}
+.icon{
+    color: rgb(180, 95, 95);
+    font-size: 26px;
+}
+.contact-info h3 {
+    font-weight: 900;
+    font-size: 40px;
+}
+
+
+.gmail {
+    letter-spacing: 2px;
+    color: white;
+    font-size: 17px;
+}
+
+
+
+
+.contact-info {
+    margin-top: 50px;
+}
+
+.foter {
+    margin-bottom: 50px;
+}
+
+.btoon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 9999;
+}
+
+.to-top {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btoon.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.to-top:hover {
+    color: rgb(180, 95, 95);
+}
+
+.fa-circle-chevron-up {
+    font-size: 36px;
+}
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 991px) {
+    .bg-img {
+        width: 70%;
+    }
+}
+
+@media(max-width: 767px) {
+    .bg-img {
+        width: 100%;
+    }
+    .smcrd {
+        border: 1px solid rgb(66, 62, 62);
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        font-weight: 900;
+        font-size: 26px;
+    }
+}
+@media(max-width: 512px){
+    .cuntant .text {
+        position: relative;
+        color: rgb(180, 95, 95);
+        font-size: 29px;
+        font-weight: 900;
+    }
+    .cuntant p {
+        color: rgb(180, 95, 95);
+        font-size: 20px;
+    }
+    .bg-img {
+        margin-left: 0px;
+    }
+    .btn {
+        display: inline-block;
+        padding: .5rem 1rem;
+        font-size: .5rem;
+        color: white;
+        background-color: transparent;
+        border: 0.1rem solid rgb(180, 95, 95);
+        margin: 2px;
+        cursor: pointer;
+    }
+    .icon{
+        color: rgb(180, 95, 95);
+        font-size: 18px;
+    }
+    .gmail {
+        letter-spacing: 2px;
+        color: white;
+        font-size: 14px;
+    }
+    
+}
